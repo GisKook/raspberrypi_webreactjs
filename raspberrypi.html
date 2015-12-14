@@ -5,32 +5,47 @@
     <title></title>
     <script src="./react.js"></script>
     <script src="./react-dom.js"></script>
+    <script src="./jquery-1.11.1.js"></script>
+    <script src="./layout.js"></script>
 </head>
 <body>
 
-<div id="container"></div>
+<div id="header">Hello</div>
+<div id="menu">world</div>
+<div id="show">yeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeah</div>
+<div id="copyright"></div>
+
+<style>
+    #header{
+        background-color:black;
+        color:white;
+        text-align:center;
+        padding:0px;
+    }
+    #menu{`
+        background-color:#fafff0;
+    }
+    #show{
+        background-color:black;
+    }
+</style>
+
 
 <script>
     var ExampleApplication = React.createClass({
         render: function() {
-            var elapsed = Math.round(this.props.elapsed  / 100);
-            var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
-            var message =
-                    'React has been successfully running for ' + seconds + ' seconds.';
+            var message = 'Hello world';
 
             return React.DOM.p(null, message);
         }
-    });
+    })
+
     var ExampleApplicationFactory = React.createFactory(ExampleApplication);
 
-    var start = new Date().getTime();
-    setInterval(function() {
-        ReactDOM.render(
-                ExampleApplicationFactory({elapsed: new Date().getTime() - start}),
-                document.getElementById('container')
-        );
-    }, 1000);
-
+    /*ReactDOM.render(
+            ExampleApplicationFactory(),
+            document.getElementById('menuitem2')
+    );*/
 </script>
 
 </body>
