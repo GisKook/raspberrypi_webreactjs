@@ -8,11 +8,11 @@
     <script src="./jquery-1.11.1.js"></script>
     <script src="./layout.js"></script>
 </head>
-<body>
+<body style="margin: 0;">
 
-<div id="header">Hello</div>
-<div id="menu">world</div>
-<div id="show">yeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeahyeah</div>
+<div id="header"></div>
+<div id="menu"></div>
+<div id="show">show</div>
 <div id="copyright"></div>
 
 <style>
@@ -22,29 +22,35 @@
         text-align:center;
         padding:0px;
     }
-    #menu{`
+    #menu{
         background-color:#fafff0;
+        float: left;
+        margin: 0;
+        border-style: none;
     }
     #show{
-        background-color:black;
+        background-color: black;
+        color:white;
+        float:left;
+        padding:0px;
+        margin: 0px;
+        border: none;
     }
 </style>
 
-
 <script>
-    var ExampleApplication = React.createClass({
+    var PageControl = React.createClass({
         render: function() {
-            var message = 'Hello world';
-
+            var message="hello"
             return React.DOM.p(null, message);
         }
     })
 
-    var ExampleApplicationFactory = React.createFactory(ExampleApplication);
+    var PageControlFactory = React.createFactory(PageControl);
 
-    /*ReactDOM.render(
-            ExampleApplicationFactory(),
-            document.getElementById('menuitem2')
+ /*   ReactDOM.render(
+            PageControlFactory(),
+            document.getElementById('menu')
     );*/
 </script>
 
